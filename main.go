@@ -34,8 +34,8 @@ func main() {
 }
 
 func handle(dir string) (err error) {
-	log.Println("into:", dir)
-	defer log.Println("out:", dir)
+	log.Println("=>", dir)
+	defer log.Println("<=", dir)
 	var fis []os.FileInfo
 	if fis, err = ioutil.ReadDir(dir); err != nil {
 		return
@@ -91,7 +91,7 @@ func md5sumSingle(dir, file string, w io.Writer) (err error) {
 	}
 	defer f.Close()
 
-	log.Printf("calc: %s", file)
+	log.Println("  *", file)
 
 	h := md5.New()
 	if _, err = io.Copy(h, f); err != nil {
