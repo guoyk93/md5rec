@@ -13,7 +13,7 @@ import (
 	"strings"
 )
 
-var (
+const (
 	md5sumFile = "md5sum.txt"
 )
 
